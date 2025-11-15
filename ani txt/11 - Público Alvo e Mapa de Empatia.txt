@@ -1,0 +1,88 @@
+﻿Mapa de Empatia - Cliente Local
+1️⃣ Quem é o cliente?
+* Dono(a) de pequeno negócio local (loja, comércio, serviço)
+* Cidade pequena / interior / destino turístico como Pipa-RN
+* Faturamento modesto, dependente da própria rotina
+* Pouca experiência formal em gestão ou marketing digital
+* Busca crescer, mas sem perder controle do dia a dia
+
+2️⃣ O que pensa e sente?
+* Preocupações: vendas irregulares, clientes inconsistentes
+* Frustrações: falta de tempo, excesso de tarefas, não sabe priorizar
+* Desejos: ter clareza, rotina organizada, negócios funcionando sozinho
+* Medos: perder clientes, fazer investimentos sem retorno, se sobrecarregar
+
+3️⃣ O que vê?
+* Concorrência próxima, às vezes com mais recursos ou visibilidade
+* Exemplos de sucesso em redes sociais ou grandes centros
+* Ferramentas complexas que parecem difíceis de aplicar
+* Oportunidades de crescimento que parecem confusas ou caras
+
+4️⃣ O que ouve?
+* Conselhos de amigos ou familiares sobre como "ganhar mais"
+* Sugestões de colegas sobre marketing digital, planilhas ou redes sociais
+* Feedback de clientes sobre atendimento e experiência do negócio
+* Mensagens de vendedores de soluções prontas que prometem crescimento rápido
+
+5️⃣ O que fala e faz?
+* Expressa preocupação sobre resultados e rotina
+* Tenta organizar tarefas de forma improvisada
+* Pode usar redes sociais de forma irregular ou básica
+* Busca ajuda quando sente dificuldade, mas valoriza soluções práticas
+
+6️⃣ Dores (Pain Points)
+* Falta de clareza sobre o que priorizar
+* Vendas inconsistentes / clientes instáveis
+* Rotina desorganizada, excesso de tarefas
+* Dificuldade em implementar ferramentas simples
+* Sensação de estar sempre correndo e sem tempo
+
+7️⃣ Ganhos / Resultados que deseja
+* Negócio mais organizado e previsível
+* Ferramentas simples aplicáveis no dia a dia
+* Aumento da eficiência e vendas mais consistentes
+* Clareza sobre métricas e prioridades
+* Liberdade para focar no crescimento sem sobrecarga
+
+
+Público-Alvo
+Segmento principal:
+* Pequenos negócios locais em cidades pequenas ou destinos turísticos (como Pipa-RN)
+* Donos de lojas, serviços ou microempreendimentos
+* Negócios de até 10 funcionários, faturamento modesto
+* Clientes que buscam crescer, mas têm pouco tempo e recursos
+* Interesse em soluções práticas, simples e rápidas, aplicáveis no dia a dia
+Características gerais:
+* Idade: 25-50 anos
+* Escolaridade: ensino médio completo ou superior, mas sem experiência avançada em gestão
+* Perfil comportamental: mão na massa, busca autonomia, aberto a aprendizado prático
+* Necessidade: organizar vendas, rotina, presença digital, finanças e métricas
+
+Personas
+Persona 1 - Maria, a lojista organizada, mas sobrecarregada
+* Idade: 38 anos
+* Negócio: loja de artesanato e souvenirs
+* Local: cidade turística pequena
+* Desafio: vende bem na alta temporada, mas no resto do ano as vendas caem; dificuldade em organizar estoque e fluxo de clientes
+* Objetivos: rotina organizada, vendas mais previsíveis, presença digital básica para atrair turistas
+* Comportamento: usa redes sociais de forma improvisada; valoriza soluções práticas e rápidas
+* Mensagem-chave: "Preciso de alguém que me ajude a organizar o dia a dia e manter meu negócio funcionando sem estresse."
+
+Persona 2 - João, o prestador de serviços independente
+* Idade: 32 anos
+* Negócio: pequeno restaurante ou bar local
+* Local: cidade interiorana, cidade turística
+* Desafio: muitas tarefas diárias, vendas instáveis; não acompanha métricas ou finanças
+* Objetivos: aumentar vendas, entender métricas básicas, organizar rotina e pedidos
+* Comportamento: tenta soluções digitais sozinho, mas desiste rapidamente; valoriza acompanhamento próximo e prático
+* Mensagem-chave: "Preciso de alguém que mostre o que realmente importa e me ajude a fazer acontecer sem complicação."
+
+Persona 3 - Ana, a empreendedora digital local
+* Idade: 28 anos
+* Negócio: produtos alimentícios ou aulas/serviços locais
+* Local: cidade pequena ou turística
+* Desafio: quer vender mais online, mas não sabe criar landing page, Google Meu Negócio ou campanhas simples
+* Objetivos: presença digital estruturada, vendas consistentes, ferramentas simples
+* Comportamento: curiosa, aberta a aprender; valoriza soluções que funcionem de forma prática e rápida
+* Mensagem-chave: "Quero alguém que me ensine a organizar meu negócio e aumentar minhas vendas sem complicação."
+

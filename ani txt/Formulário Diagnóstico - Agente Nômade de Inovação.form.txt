@@ -1,0 +1,51 @@
+﻿📋 Formulário de Diagnóstico Inicial - Programa Agente Nômade de Inovação
+Bem-vindo(a)! Este diagnóstico tem o objetivo de compreender a fase atual do seu negócio e identificar oportunidades práticas de melhoria. Ao final, você receberá um mini-plano de ação com base nas suas respostas. O preenchimento leva cerca de 6 minutos e seus dados estão totalmente seguros.
+🧭 Diagnóstico Fechado
+1. 1. Como você descreveria a organização financeira do seu negócio hoje?
+* ☐ Não tenho controle claro
+* ☐ Tenho anotações, mas não consigo analisar resultados
+* ☐ Tenho controle e consigo acompanhar parcialmente
+* ☐ Tenho planilhas/sistemas e consigo tomar decisões com base nelas
+→ Indica trilhas 'Organização Financeira' ou 'Decisões Baseadas em Dados'
+
+2. 2. Em relação à tecnologia e ferramentas de gestão (planilhas, maquinetas, sistemas, etc.), como você se sente hoje?
+* ☐ Não utilizo nada com regularidade
+* ☐ Uso o básico, mas sinto que não aproveito bem
+* ☐ Tenho ferramentas, mas não estão integradas ou atualizadas
+* ☐ Tenho um sistema que me ajuda de verdade
+→ Indica trilha 'Gestão e Tecnologia'
+
+3. 3. Como está o movimento e a visibilidade do seu negócio nos últimos meses?
+* ☐ Estou com poucos clientes e pouca procura
+* ☐ Tenho um bom movimento, mas sem constância
+* ☐ As vendas estão estáveis, mas quero crescer
+* ☐ Tenho boa procura e desejo expandir resultados
+* ☐ Estou em fase de crescimento e quero consolidar esse momento
+→ Mapeia necessidade em 'Marketing Orgânico', 'Presença Digital' ou 'Gestão de Resultados'
+
+4. 4. Você já tem presença digital estruturada (site, Google, redes sociais ativas)?
+* ☐ Não tenho nada estruturado
+* ☐ Tenho redes sociais, mas não trago clientes por elas
+* ☐ Tenho site/Google, mas não sei como aproveitar
+* ☐ Sim, tenho presença ativa e resultados
+→ Indica necessidade da trilha 'Presença Digital' ou parceria 'Tempo Digital'
+
+💬 Diagnóstico Aberto
+5. 5. Qual o principal objetivo do seu negócio nos próximos 3 meses? (Exemplo: aumentar clientes, organizar finanças, crescer com constância, etc.)
+______________________________________________________________
+
+6. 6. Qual tem sido o maior desafio para alcançar esse objetivo? (Exemplo: falta de tempo, ferramentas, clareza, equipe, visibilidade, etc.)
+______________________________________________________________
+
+7. 7. Se você pudesse resolver apenas um problema do seu negócio hoje, qual seria? (Essa resposta confirma a trilha ideal e o grau de consciência do empreendedor.)
+______________________________________________________________
+
+🧾 Informações básicas (para controle CRM)
+Nome completo:
+______________________________________________________________
+Empresa:
+______________________________________________________________
+Setor de atuação:
+______________________________________________________________
+Contato (WhatsApp / E-mail):
+______________________________________________________________

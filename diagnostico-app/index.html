@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diagnóstico gratuito para pequenas e médias empresas - Agente Nômade de Inovação">
+    <meta name="keywords" content="diagnóstico empresarial, consultoria, pequenas empresas, inovação, gestão">
+    <meta name="author" content="Agente Nômade de Inovação">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+    
+    <title>Diagnóstico Empresarial Gratuito | Agente Nômade de Inovação</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>Agente Nômade de Inovação</h1>
+                <p>Diagnóstico Empresarial Gratuito</p>
+            </div>
+        </header>
+
+        <!-- Formulário de Diagnóstico -->
+        <section class="diagnostic-form" id="form-section">
+            <div class="form-container">
+                <div class="intro">
+                    <h2>📋 Diagnóstico do Seu Negócio</h2>
+                    <p>Bem-vindo(a)! Este diagnóstico tem o objetivo de compreender a fase atual do seu negócio e identificar oportunidades práticas de melhoria. Ao final, você receberá um mini-plano de ação personalizado.</p>
+                    <p><strong>⏱️ Tempo estimado:</strong> 6 minutos</p>
+                </div>
+
+                <form id="diagnostic-form">
+                    <!-- Pergunta 1 -->
+                    <div class="question-group">
+                        <h3>1. Como você descreveria a organização financeira do seu negócio hoje?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="1"> Não tenho controle claro</label>
+                            <label><input type="radio" name="q1" value="2"> Tenho anotações, mas não consigo analisar resultados</label>
+                            <label><input type="radio" name="q1" value="3"> Tenho controle e consigo acompanhar parcialmente</label>
+                            <label><input type="radio" name="q1" value="4"> Tenho planilhas/sistemas e consigo tomar decisões com base nelas</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div class="question-group">
+                        <h3>2. Em relação à tecnologia e ferramentas de gestão, como você se sente hoje?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="1"> Não utilizo nada com regularidade</label>
+                            <label><input type="radio" name="q2" value="2"> Uso o básico, mas sinto que não aproveito bem</label>
+                            <label><input type="radio" name="q2" value="3"> Tenho ferramentas, mas não estão integradas ou atualizadas</label>
+                            <label><input type="radio" name="q2" value="4"> Tenho um sistema que me ajuda de verdade</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div class="question-group">
+                        <h3>3. Como está o movimento e a visibilidade do seu negócio nos últimos meses?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="1"> Estou com poucos clientes e pouca procura</label>
+                            <label><input type="radio" name="q3" value="2"> Tenho um bom movimento, mas sem constância</label>
+                            <label><input type="radio" name="q3" value="3"> As vendas estão estáveis, mas quero crescer</label>
+                            <label><input type="radio" name="q3" value="4"> Tenho boa procura e desejo expandir resultados</label>
+                            <label><input type="radio" name="q3" value="5"> Estou em fase de crescimento e quero consolidar esse momento</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 4 -->
+                    <div class="question-group">
+                        <h3>4. Você já tem presença digital estruturada?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="1"> Não tenho nada estruturado</label>
+                            <label><input type="radio" name="q4" value="2"> Tenho redes sociais, mas não trago clientes por elas</label>
+                            <label><input type="radio" name="q4" value="3"> Tenho site/Google, mas não sei como aproveitar</label>
+                            <label><input type="radio" name="q4" value="4"> Sim, tenho presença ativa e resultados</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 5 -->
+                    <div class="question-group">
+                        <h3>5. Qual o principal objetivo do seu negócio nos próximos 3 meses?</h3>
+                        <textarea name="q5" rows="3" placeholder="Exemplo: aumentar clientes, organizar finanças, crescer com constância..."></textarea>
+                    </div>
+
+                    <!-- Pergunta 6 -->
+                    <div class="question-group">
+                        <h3>6. Qual tem sido o maior desafio para alcançar esse objetivo?</h3>
+                        <textarea name="q6" rows="3" placeholder="Exemplo: falta de tempo, ferramentas, clareza, equipe, visibilidade..."></textarea>
+                    </div>
+
+                    <!-- Pergunta 7 -->
+                    <div class="question-group">
+                        <h3>7. Se você pudesse resolver apenas um problema do seu negócio hoje, qual seria?</h3>
+                        <textarea name="q7" rows="3" placeholder="Descreva o problema mais urgente do seu negócio..."></textarea>
+                    </div>
+
+                    <!-- Informações Básicas -->
+                    <div class="info-section">
+                        <h3>📝 Informações Básicas</h3>
+                        <div class="info-grid">
+                            <input type="text" name="nome" placeholder="Nome completo" required>
+                            <input type="text" name="empresa" placeholder="Nome da empresa">
+                            <input type="text" name="setor" placeholder="Setor de atuação">
+                            <input type="text" name="contato" placeholder="WhatsApp ou E-mail" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">📊 Gerar Meu Diagnóstico</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Resultado do Diagnóstico -->
+        <section class="diagnostic-result hidden" id="result-section">
+            <div class="result-container">
+                <div class="result-header">
+                    <h2>🎯 Seu Diagnóstico Personalizado</h2>
+                    <div class="client-info">
+                        <p><strong>Cliente:</strong> <span id="result-nome"></span></p>
+                        <p><strong>Empresa:</strong> <span id="result-empresa"></span></p>
+                        <p><strong>Data:</strong> <span id="result-data"></span></p>
+                    </div>
+                </div>
+
+                <div class="diagnostic-summary">
+                    <h3>📋 Resumo do Diagnóstico</h3>
+                    <div id="diagnostic-content"></div>
+                </div>                <div class="action-plan">
+                    <h3>🎯 Trilhas Recomendadas Para Seu Negócio</h3>
+                    <div id="action-plan-content"></div>
+                </div>
+
+                <div c                <div class="next-steps">
+                    <h3>🚀 Como Começar Sua Transformação</h3>
+                    <div class="steps-grid">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <h4>Escolha Sua Trilha</h4>
+                            <p>Comece pela trilha mais urgente para seu negócio (recomendamos a #1)</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <h4>Acompanhamento Semanal</h4>
+                            <p>Receba orientação personalizada durante os 90 dias de implementação</p>
+                        </div>                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <h4>Acompanhe os Resultados</h4>
+                            <p>Veja as melhorias acontecerem semana após semana</p>
+                        </div>
+                    </div>
+                    <div class="cta-final">
+                        <h4>💬 Quer conversar sobre seu diagnóstico?</h4>
+                        <p>Agende uma conversa gratuita para esclarecer dúvidas e definir o melhor caminho para seu negócio.</p>                    <a href="https://wa.me/5584999999999?text=Olá! Acabei de fazer o diagnóstico e gostaria de conversar sobre as trilhas recomendadas." target="_blank" class="btn-primary">Conversar no WhatsApp</a>
+                    </div>                </div>
+                <div class="actions">
+                    <button onclick="window.print()" class="btn-secondary">🖨️ Imprimir Diagnóstico</button>
+                    <button onclick="startOver()" class="btn-secondary">🔄 Fazer Novo Diagnóstico</button>
+                </div>utton onclick="startOver()" class="btn-secondary">🔄 Fazer Novo Diagnóstico</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

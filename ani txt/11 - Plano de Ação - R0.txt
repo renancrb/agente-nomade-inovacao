@@ -1,0 +1,63 @@
+﻿✅ Plano de ação 
+1) Planejamento e Compreensão
+* Ler Ali/Sebrae e modelar oferta
+* Definir problema principal que resolve + resultado prometido
+* Criar tese de crescimento (hipótese: "X visitas → Y clientes")
+Regra do livro: clareza antes de velocidade.
+
+2) Modelo Comercial
+* Estruturar modelo de negócio 
+* Criar script simples de abordagem para visitas + follow-up
+* Definir lead score básico (quente, morno, frio)
+* Criar planilha simples (CRM mínimo: nome | contato | status | data | observação)
+* Criar meu CNPJ - INOVA SIMPLES e solicitação simples nacional
+Regra: vender antes de complicar.
+
+3) MVP do Produto
+* Criar formulário de diagnóstico gratuito (5-7 perguntas)
+* Criar apresentação curta do serviço (1 slide ou vídeo curto)
+* Criar checklist de entrega mínima
+* Criar programa de diagnostico - rápido. Criação do plano
+* Garantir que cliente entenda:
+o O que ganha
+o Como funciona
+o Em quanto tempo
+* Criar página simples (landing) com depoimentos
+
+Regra: MVP = promessa clara + entrega mínima real.
+
+4) Teste em Campo (Pipa - até 25/11)
+* Mapear negócios locais (principalmente 2º e 3º do Google Maps)
+* Visitas presenciais e WhatsApp comercial como apoio
+* Meta: 10 visitas → 1 cliente (métrica norteadora)
+* Registrar aprendizados por dia:
+o objeções mais comuns
+o perfil que converte mais
+o perguntas que surgem
+Regra: aprender rápido com o mercado real.
+
+5) Execução (1 semana)
+* Realizar 10 visitas + follow-up
+* Oferecer avaliação gratuita (diagnóstico)
+* Coletar feedback e dores reais
+* Fechar 1 cliente piloto (pago com desconto em troca de feedback + caso)
+Regra: primeiro cliente paga, mesmo que pouco.
+
+6) Avaliar e Ajustar
+* Analisar resultados e objeções
+* Reforçar o que funcionou
+* Ajustar linguagem, oferta e pitch
+* Documentar aprendizados
+Regra: crescer com consistência, não com ansiedade.
+
+7) Próximos Passos (após validação)
+* Criar rotina de conteúdo (prova social + bastidores da mentoria)
+* Estruturar processos mínimos (onboarding, planilha de evolução)
+* Definir o que vai terceirizar conforme escala (design, tráfego, suporte)
+Regra: só terceirizar depois de entender o processo.
+
+🎯 Métricas essenciais
+IndicadorMeta InicialVisitas10Taxa de conversão10% (1 cliente)Ticket inicialR$ 497Prazoaté 25/11CanalLocal + WhatsApp
+💬 Frase-guia do plano
+Simplificar para acelerar. Fazer o básico muito bem feito antes de escalar.
+

@@ -1,0 +1,39 @@
+﻿✅ Filtro Básico do Cliente - Elegibilidade para o Programa
+O filtro tem o objetivo de avaliar se o empreendedor está em condições ideais - pessoais, emocionais e operacionais - para participar do programa e aproveitar ao máximo a trilha escolhida.
+São 7 critérios, sendo os seis primeiros avaliativos e o último o resultado geral (score).
+
+1. Clareza sobre o problema e o objetivo
+O empreendedor:
+* Reconhece o principal desafio atual do negócio;
+* Tem um objetivo claro do que deseja alcançar (ex: organizar finanças, aumentar faturamento, estruturar processos, etc.).
+🔲 Sim 🔲 Não 🔲 Parcial  Observações: ____________
+
+2. Abertura para ouvir e executar
+Demonstra disposição genuína para ouvir, aprender e aplicar o que é proposto, sem resistência às orientações ou mudanças.
+🔲 Sim 🔲 Não 🔲 Parcial  Observações: ____________
+
+3. Estabilidade emocional e comportamental
+Apresenta equilíbrio emocional, comunicação respeitosa e abertura ao diálogo.
+Não possui transtornos visíveis não tratados ou atitudes que prejudiquem o andamento do trabalho.
+🔲 Sim 🔲 Não 🔲 Parcial  Observações: ____________
+
+4. Base mínima de operação
+O negócio está em funcionamento ativo, com vendas, atendimentos ou entregas recorrentes, permitindo análise real de resultados.
+🔲 Sim 🔲 Não 🔲 Parcial  Observações: ____________
+
+5. Recursos e disponibilidade
+Possui:
+* Tempo mínimo de 1h semanal para execução e reuniões;
+* Capacidade de investimento para o programa;
+* Acesso básico a ferramentas digitais (celular, WhatsApp, planilha, internet).
+🔲 Sim 🔲 Não 🔲 Parcial  Observações: ____________
+
+6. Disposição para evoluir e aplicar novas ferramentas
+Demonstra curiosidade, vontade e consistência em testar e aplicar novos métodos, mesmo sem domínio técnico.
+🔲 Sim 🔲 Não 🔲 Parcial  Observações: ____________
+
+7. Score Final - Critério de Elegibilidade
+Cada critério vale 1 ponto (Sim = 1 / Parcial = 0,5 / Não = 0).
+O cliente deve atingir pelo menos 75% (≥ 4,5 pontos) para ser considerado elegível ao programa.
+📊 Resultado: ____ / 6  ✅ Aprovado  ⚠️ Acompanhamento necessário  ❌ Não elegível
+

@@ -1,0 +1,40 @@
+﻿Tese de Crescimento
+Hipótese Principal
+"X visitas → Y diagnósticos → Z clientes → R$5.000 de faturamento mensal."
+O objetivo é construir uma base previsível de crescimento, testando e ajustando o funil até atingir a meta de faturamento mensal de R$5.000.
+
+1. Estrutura do Funil
+Etapa 1 - Mapeamento
+* O que é: Levantamento e organização de potenciais negócios locais (pequenos comércios, prestadores de serviço, profissionais autônomos).
+* Ação: Pesquisa ativa e visitas presenciais para apresentação inicial do programa.
+* Meta: 100 contatos mapeados por ciclo.
+
+Etapa 2 - Visitas e Abordagem Inicial
+* O que é: Conversa direta e apresentação do programa de forma leve e contextualizada à realidade do empreendedor.
+* Taxa esperada de conversão para diagnóstico: 25%.
+* Meta: A cada 100 visitas → 25 diagnósticos realizados.
+
+Etapa 3 - Diagnóstico e Conexão
+* O que é: Sessão curta de avaliação para entender dores, momento do negócio e indicar a trilha ideal.
+* Taxa esperada de conversão para fechamento: 20%.
+* Meta: A cada 25 diagnósticos → 5 clientes fechados.
+
+Etapa 4 - Conversão e Entrega
+* O que é: Assinatura do contrato e início da trilha escolhida.
+* Ticket médio: entre R$697 e R$997 por cliente.
+* Meta financeira:
+o 5 clientes × ticket médio R$850 ≈ R$4.250/mês
+o Ajustando para 6 clientes/mês, alcança-se ≈ R$5.100/mês.
+
+2. Ajustes e Aprendizados Esperados
+O funil é hipotético e testável, sendo aperfeiçoado conforme os resultados práticos.
+A meta é otimizar cada etapa com base em feedbacks e dados reais, alcançando maior previsibilidade e estabilidade de receita.
+Indicadores a acompanhar:
+* Taxa de conversão por etapa (visitas → diagnósticos → vendas)
+* Custo por cliente adquirido (tempo, deslocamento, material)
+* Ticket médio e taxa de recompra (clientes que renovam ou indicam)
+* ROI por trilha (quais geram mais retorno e retenção)
+
+3. Projeção Simplificada de Crescimento
+MêsVisitasDiagnósticosClientesTicket MédioFaturamento Estimado1100255R$850R$4.2502120306R$850R$5.1003150387R$850R$5.950Conclusão: ao manter o ritmo de visitas e aprimorar conversões, o programa alcança e estabiliza o faturamento de R$5.000/mês em até 3 meses.
+
