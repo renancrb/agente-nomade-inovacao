@@ -568,7 +568,7 @@ textarea:focus {
 }
 
 .next-steps h3 {
-    color: var(--text-dark);
+    color: var (--text-dark);
     margin-bottom: 1rem;
 }
 
@@ -681,5 +681,85 @@ textarea:focus {
     .diagnostic-result {
         box-shadow: none;
         border: 1px solid #ccc;
+    }
+}
+
+/* ===============================
+   NOTIFICAÇÃO DE SALVAMENTO
+   =============================== */
+
+.save-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #364011, #97A626);
+    color: #FEFDF8;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(54, 64, 17, 0.3);
+    z-index: 1000;
+    max-width: 350px;
+    animation: slideIn 0.3s ease-out;
+    border: 2px solid #97A626;
+}
+
+.notification-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.notification-message {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.notification-details {
+    font-size: 12px;
+    opacity: 0.9;
+    color: #F2E529;
+}
+
+.notification-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #FEFDF8;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.notification-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .save-notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
     }
 }

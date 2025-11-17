@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 Teste Simples Diagnóstico</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-group { margin: 15px 0; }
+        label { display: block; margin: 5px 0; }
+        input, textarea, select { padding: 8px; margin: 5px 0; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        .hidden { display: none; }
+        .result { background: #f8f9fa; padding: 20px; border: 1px solid #ddd; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Teste Simples - Diagnóstico</h1>
+    
+    <div id="form-section">
+        <h2>Formulário de Teste</h2>
+        <form id="test-form">
+            <div class="form-group">
+                <label>Nome:</label>
+                <input type="text" name="nome" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Empresa:</label>
+                <input type="text" name="empresa">
+            </div>
+            
+            <div class="form-group">
+                <label>Contato:</label>
+                <input type="text" name="contato" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Q1 - Financeiro:</label>
+                <label><input type="radio" name="q1" value="1"> Opção 1</label>
+                <label><input type="radio" name="q1" value="2"> Opção 2</label>
+                <label><input type="radio" name="q1" value="3"> Opção 3</label>
+                <label><input type="radio" name="q1" value="4"> Opção 4</label>
+            </div>
+            
+            <div class="form-group">
+                <label>Q2 - Tecnologia:</label>
+                <label><input type="radio" name="q2" value="1"> Opção 1</label>
+                <label><input type="radio" name="q2" value="2"> Opção 2</label>
+                <label><input type="radio" name="q2" value="3"> Opção 3</label>
+                <label><input type="radio" name="q2" value="4"> Opção 4</label>
+            </div>
+            
+            <div class="form-group">
+                <label>Q3 - Marketing:</label>
+                <label><input type="radio" name="q3" value="1"> Opção 1</label>
+                <label><input type="radio" name="q3" value="2"> Opção 2</label>
+                <label><input type="radio" name="q3" value="3"> Opção 3</label>
+                <label><input type="radio" name="q3" value="4"> Opção 4</label>
+                <label><input type="radio" name="q3" value="5"> Opção 5</label>
+            </div>
+            
+            <div class="form-group">
+                <label>Q4 - Digital:</label>
+                <label><input type="radio" name="q4" value="1"> Opção 1</label>
+                <label><input type="radio" name="q4" value="2"> Opção 2</label>
+                <label><input type="radio" name="q4" value="3"> Opção 3</label>
+                <label><input type="radio" name="q4" value="4"> Opção 4</label>
+            </div>
+            
+            <button type="submit">🎯 Gerar Diagnóstico de Teste</button>
+        </form>
+    </div>
+    
+    <div id="result-section" class="hidden">
+        <div class="result">
+            <h2>✅ Resultado do Teste</h2>
+            <div id="result-content"></div>
+            <button onclick="startOver()">🔄 Novo Teste</button>
+        </div>
+    </div>
+
+    <div id="debug-info" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffeaa7;">
+        <h3>🔧 Debug Info</h3>
+        <div id="debug-log"></div>
+    </div>
+
+    <script>
+        console.log('🚀 Script carregado');
+        
+        function addDebugLog(message) {
+            const log = document.getElementById('debug-log');
+            const time = new Date().toLocaleTimeString();
+            log.innerHTML += `<div>[${time}] ${message}</div>`;
+            console.log(message);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            addDebugLog('✅ DOM carregado');
+            
+            const form = document.getElementById('test-form');
+            const formSection = document.getElementById('form-section');
+            const resultSection = document.getElementById('result-section');
+            
+            if (!form) {
+                addDebugLog('❌ Formulário não encontrado');
+                return;
+            }
+            
+            addDebugLog('✅ Elementos encontrados');
+            
+            form.addEventListener('submit', function(e) {
+                addDebugLog('🎯 Submit detectado');
+                e.preventDefault();
+                
+                // Coletar dados
+                const formData = new FormData(form);
+                const dados = {};
+                
+                for (let [key, value] of formData.entries()) {
+                    dados[key] = value;
+                    addDebugLog(`📝 ${key}: ${value}`);
+                }
+                
+                // Validar
+                if (!dados.q1 || !dados.q2 || !dados.q3 || !dados.q4) {
+                    addDebugLog('❌ Validação falhou - perguntas em branco');
+                    alert('Responda todas as perguntas!');
+                    return;
+                }
+                
+                if (!dados.nome || !dados.contato) {
+                    addDebugLog('❌ Validação falhou - dados pessoais em branco');
+                    alert('Preencha nome e contato!');
+                    return;
+                }
+                
+                addDebugLog('✅ Validação passou');
+                
+                // Salvar no localStorage
+                try {
+                    const existing = JSON.parse(localStorage.getItem('teste_diagnosticos') || '[]');
+                    existing.push({
+                        ...dados,
+                        timestamp: new Date().toISOString(),
+                        id: Date.now()
+                    });
+                    localStorage.setItem('teste_diagnosticos', JSON.stringify(existing));
+                    addDebugLog('✅ Salvo no localStorage');
+                } catch (error) {
+                    addDebugLog('❌ Erro ao salvar: ' + error.message);
+                }
+                
+                // Mostrar resultado
+                const resultContent = document.getElementById('result-content');
+                resultContent.innerHTML = `
+                    <h3>Dados Coletados:</h3>
+                    <p><strong>Nome:</strong> ${dados.nome}</p>
+                    <p><strong>Empresa:</strong> ${dados.empresa || 'Não informado'}</p>
+                    <p><strong>Contato:</strong> ${dados.contato}</p>
+                    <p><strong>Respostas:</strong> Q1=${dados.q1}, Q2=${dados.q2}, Q3=${dados.q3}, Q4=${dados.q4}</p>
+                    <p><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
+                `;
+                
+                addDebugLog('✅ Conteúdo do resultado preenchido');
+                
+                // Trocar seções
+                formSection.classList.add('hidden');
+                resultSection.classList.remove('hidden');
+                
+                addDebugLog('✅ Seções trocadas - resultado deve estar visível');
+                
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        function startOver() {
+            addDebugLog('🔄 Reiniciando teste');
+            document.getElementById('form-section').classList.remove('hidden');
+            document.getElementById('result-section').classList.add('hidden');
+            document.getElementById('test-form').reset();
+        }
+        
+        // Verificar localStorage
+        window.addEventListener('load', function() {
+            const saved = localStorage.getItem('teste_diagnosticos');
+            if (saved) {
+                const count = JSON.parse(saved).length;
+                addDebugLog(`📊 ${count} testes salvos no localStorage`);
+            }
+        });
+    </script>
+</body>
+</html>

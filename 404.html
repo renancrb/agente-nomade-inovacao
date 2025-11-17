@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando... - Agente Nômade de Inovação</title>
+    
+    <!-- Redirecionamento para base LP -->
+    <script>
+        // Redirecionamento imediato para a landing page
+        window.location.replace('/base%20LP/');
+    </script>
+    
+    <!-- Fallback: Meta refresh -->
+    <meta http-equiv="refresh" content="0; url=/base%20LP/">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #364011, #97A626);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #F2E529;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h2>Redirecionando para Agente Nômade de Inovação...</h2>
+        <p>Se não for redirecionado automaticamente, <a href="/base%20LP/" style="color: #F2E529;">clique aqui</a>.</p>
+    </div>
+</body>
+</html>

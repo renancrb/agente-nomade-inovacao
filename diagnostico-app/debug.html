@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 Debug Diagnóstico - Agente Nômade</title>
+    <style>
+        body { 
+            font-family: Inter, sans-serif; 
+            padding: 20px; 
+            background: #FEFDF8; 
+            color: #364011; 
+        }
+        .debug-section { 
+            background: white; 
+            padding: 20px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+            border: 2px solid #97A626; 
+        }
+        .btn { 
+            background: #97A626; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            margin: 5px; 
+        }
+        .btn:hover { background: #364011; }
+        pre { 
+            background: #f5f5f5; 
+            padding: 15px; 
+            border-radius: 5px; 
+            overflow-x: auto; 
+            max-height: 300px; 
+        }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Debug Sistema de Salvamento</h1>
+    
+    <div class="debug-section">
+        <h2>📊 Status do Local Storage</h2>
+        <button class="btn" onclick="checkLocalStorage()">Verificar Dados Salvos</button>
+        <button class="btn" onclick="clearLocalStorage()">Limpar Dados</button>
+        <div id="localStorage-status"></div>
+    </div>
+
+    <div class="debug-section">
+        <h2>🧪 Teste Rápido de Salvamento</h2>
+        <button class="btn" onclick="testSaveSystem()">Testar Salvamento</button>
+        <div id="test-status"></div>
+    </div>
+
+    <div class="debug-section">
+        <h2>📈 Exportar Dados</h2>
+        <button class="btn" onclick="exportData()">Baixar CSV</button>
+        <button class="btn" onclick="showStats()">Ver Estatísticas</button>
+        <div id="export-status"></div>
+    </div>
+
+    <div class="debug-section">
+        <h2>🚀 Ir para Diagnóstico</h2>
+        <button class="btn" onclick="window.open('index.html', '_blank')">Abrir Diagnóstico</button>
+        <button class="btn" onclick="window.open('../base LP/index.html', '_blank')">Abrir Landing Page</button>
+    </div>
+
+    <div class="debug-section">
+        <h2>📋 Log de Debug</h2>
+        <div id="debug-log"></div>
+    </div>
+
+    <script>
+        // Função para adicionar ao log
+        function addToLog(message, type = 'info') {
+            const log = document.getElementById('debug-log');
+            const timestamp = new Date().toLocaleTimeString();
+            const className = type === 'error' ? 'error' : type === 'success' ? 'success' : '';
+            log.innerHTML += `<div class="status ${className}">[${timestamp}] ${message}</div>`;
+            log.scrollTop = log.scrollHeight;
+        }
+
+        // Verificar Local Storage
+        function checkLocalStorage() {
+            try {
+                const data = localStorage.getItem('agente_nomade_diagnosticos');
+                const status = document.getElementById('localStorage-status');
+                
+                if (!data) {
+                    status.innerHTML = '<div class="status error">❌ Nenhum diagnóstico encontrado no Local Storage</div>';
+                    addToLog('Local Storage vazio', 'error');
+                    return;
+                }
+
+                const diagnostics = JSON.parse(data);
+                status.innerHTML = `
+                    <div class="status success">✅ ${diagnostics.length} diagnóstico(s) encontrado(s)</div>
+                    <pre>${JSON.stringify(diagnostics, null, 2)}</pre>
+                `;
+                addToLog(`Encontrados ${diagnostics.length} diagnósticos`, 'success');
+            } catch (error) {
+                document.getElementById('localStorage-status').innerHTML = 
+                    `<div class="status error">❌ Erro: ${error.message}</div>`;
+                addToLog(`Erro ao ler Local Storage: ${error.message}`, 'error');
+            }
+        }
+
+        // Limpar Local Storage
+        function clearLocalStorage() {
+            if (confirm('Tem certeza que deseja limpar todos os diagnósticos salvos?')) {
+                localStorage.removeItem('agente_nomade_diagnosticos');
+                document.getElementById('localStorage-status').innerHTML = 
+                    '<div class="status success">✅ Local Storage limpo com sucesso</div>';
+                addToLog('Local Storage limpo', 'success');
+            }
+        }
+
+        // Testar sistema de salvamento
+        function testSaveSystem() {
+            try {
+                const testDiagnostic = {
+                    timestamp: new Date().toISOString(),
+                    nome: 'Teste Debug',
+                    empresa: 'Empresa Teste',
+                    setor: 'Teste',
+                    contato: '(99) 99999-9999',
+                    q1: '2',
+                    q2: '1', 
+                    q3: '3',
+                    q4: '2',
+                    q5: 'Objetivo de teste',
+                    q6: 'Desafio de teste',
+                    q7: 'Problema de teste',
+                    scores: { financeira: 2, tecnologia: 1, marketing: 3, digital: 2, dados: 2 },
+                    trilhasRecomendadas: ['Organização Financeira', 'Gestão e Tecnologia']
+                };
+
+                // Salvar no Local Storage
+                const existing = JSON.parse(localStorage.getItem('agente_nomade_diagnosticos') || '[]');
+                existing.push({
+                    ...testDiagnostic,
+                    id: Date.now().toString()
+                });
+                localStorage.setItem('agente_nomade_diagnosticos', JSON.stringify(existing));
+
+                document.getElementById('test-status').innerHTML = 
+                    '<div class="status success">✅ Teste de salvamento realizado com sucesso!</div>';
+                addToLog('Diagnóstico de teste salvo com sucesso', 'success');
+            } catch (error) {
+                document.getElementById('test-status').innerHTML = 
+                    `<div class="status error">❌ Erro no teste: ${error.message}</div>`;
+                addToLog(`Erro no teste de salvamento: ${error.message}`, 'error');
+            }
+        }
+
+        // Exportar dados
+        function exportData() {
+            try {
+                const diagnostics = JSON.parse(localStorage.getItem('agente_nomade_diagnosticos') || '[]');
+                
+                if (diagnostics.length === 0) {
+                    document.getElementById('export-status').innerHTML = 
+                        '<div class="status error">❌ Nenhum dado para exportar</div>';
+                    return;
+                }
+
+                // Converter para CSV
+                const headers = ['Timestamp', 'Nome', 'Empresa', 'Setor', 'Contato', 'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Trilhas'];
+                let csvContent = headers.join(',') + '\n';
+                
+                diagnostics.forEach(diag => {
+                    const row = [
+                        diag.timestamp || '',
+                        `"${(diag.nome || '').replace(/"/g, '""')}"`,
+                        `"${(diag.empresa || '').replace(/"/g, '""')}"`,
+                        `"${(diag.setor || '').replace(/"/g, '""')}"`,
+                        `"${(diag.contato || '').replace(/"/g, '""')}"`,
+                        diag.q1 || '', diag.q2 || '', diag.q3 || '', diag.q4 || '',
+                        `"${(diag.q5 || '').replace(/"/g, '""')}"`,
+                        `"${(diag.q6 || '').replace(/"/g, '""')}"`,
+                        `"${(diag.q7 || '').replace(/"/g, '""')}"`,
+                        `"${(diag.trilhasRecomendadas || []).join('; ')}"`
+                    ];
+                    csvContent += row.join(',') + '\n';
+                });
+
+                // Baixar arquivo
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                
+                link.setAttribute('href', url);
+                link.setAttribute('download', `diagnosticos_debug_${new Date().toISOString().split('T')[0]}.csv`);
+                link.style.visibility = 'hidden';
+                
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                document.getElementById('export-status').innerHTML = 
+                    `<div class="status success">✅ ${diagnostics.length} diagnósticos exportados com sucesso!</div>`;
+                addToLog(`Exportados ${diagnostics.length} diagnósticos para CSV`, 'success');
+            } catch (error) {
+                document.getElementById('export-status').innerHTML = 
+                    `<div class="status error">❌ Erro na exportação: ${error.message}</div>`;
+                addToLog(`Erro na exportação: ${error.message}`, 'error');
+            }
+        }
+
+        // Mostrar estatísticas
+        function showStats() {
+            try {
+                const diagnostics = JSON.parse(localStorage.getItem('agente_nomade_diagnosticos') || '[]');
+                
+                if (diagnostics.length === 0) {
+                    document.getElementById('export-status').innerHTML = 
+                        '<div class="status error">❌ Nenhum dado para análise</div>';
+                    return;
+                }
+
+                const stats = {
+                    total: diagnostics.length,
+                    porSetor: {},
+                    trilhas: {}
+                };
+
+                diagnostics.forEach(diag => {
+                    const setor = diag.setor || 'Não informado';
+                    stats.porSetor[setor] = (stats.porSetor[setor] || 0) + 1;
+                    
+                    if (diag.trilhasRecomendadas) {
+                        diag.trilhasRecomendadas.forEach(trilha => {
+                            stats.trilhas[trilha] = (stats.trilhas[trilha] || 0) + 1;
+                        });
+                    }
+                });
+
+                document.getElementById('export-status').innerHTML = `
+                    <div class="status success">
+                        <h4>📊 Estatísticas dos Diagnósticos</h4>
+                        <pre>${JSON.stringify(stats, null, 2)}</pre>
+                    </div>
+                `;
+                addToLog(`Estatísticas calculadas para ${stats.total} diagnósticos`, 'success');
+            } catch (error) {
+                document.getElementById('export-status').innerHTML = 
+                    `<div class="status error">❌ Erro nas estatísticas: ${error.message}</div>`;
+                addToLog(`Erro no cálculo de estatísticas: ${error.message}`, 'error');
+            }
+        }
+
+        // Inicialização
+        addToLog('Sistema de debug inicializado', 'success');
+        checkLocalStorage();
+    </script>
+</body>
+</html>
