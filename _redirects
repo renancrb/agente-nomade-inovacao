@@ -1,13 +1,7 @@
 # Redirects para Agente Nômade de Inovação
-# Formato: from   to   status
+# Vercel redirects
 
-# Redireciona raiz para base LP
-/              /base%20LP/    301
-
-# Remove trailing slashes
-/*             /:splat       301!
-
-# Força HTTPS e remove www
+# Força HTTPS e redireciona www para apex
 https://www.agentedeinovacao.com.br/*  https://agentedeinovacao.com.br/:splat  301!
 
 # Fallback para URLs mal formadas

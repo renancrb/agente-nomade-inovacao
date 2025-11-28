@@ -6,206 +6,377 @@
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
-    
-    <title>Plano de Ação Personalizado | Agente Nômade de Inovação</title>
+      <title>Plano de Ação Personalizado | Agente Nômade de Inovação</title>
     <meta name="description" content="Plano de ação personalizado com diagnóstico completo e trilha recomendada para transformação do seu negócio." />
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">      <style>
-        /* Aplicando exatamente as mesmas cores da landing page */
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
         :root {
-            --primary-color: #97A626; /* verde oliva principal */
-            --primary-dark: #364011; /* verde escuro para textos importantes */
-            --accent-color: #F2E529; /* amarelo vibrante */
-            --accent-warm: #59210C; /* marrom escuro */
-            --background-light: #FEFDF8; /* off-white quente */
-            --background-card: #FFFFFF; /* branco puro */
-            --background-soft: #F9F8F3; /* tom suave */
-            --text-dark: #364011; /* verde escuro para textos */
-            --text-primary: #59210C; /* marrom para textos importantes */
-            --text-muted: #707320; /* verde médio */
-            --border-light: #E8E6E0; /* bordas suaves */
-            --shadow-light: rgba(54, 64, 17, 0.08); /* sombras suaves */
-            --shadow-medium: rgba(54, 64, 17, 0.15);
+            --primary-color: #97A626;
+            --primary-light: #A8B82D;
+            --primary-dark: #707320;
+            --primary-darker: #364011;
+            --accent-color: #F2E529;
+            --accent-warm: #59210C;
+            --background-light: #FEFDF8;
+            --background-card: #FFFFFF;
+            --background-soft: #F9F8F3;
+            --background-contrast: #1F2212;
+            --text-dark: #364011;
+            --text-primary: #59210C;
+            --text-muted: #707320;
+            --border-light: #E8E6E0;
+            --border-strong: rgba(54, 64, 17, 0.25);
+            --shadow-light: rgba(54, 64, 17, 0.08);
+            --shadow-medium: rgba(54, 64, 17, 0.16);
+            --shadow-accent: rgba(151, 166, 38, 0.25);
+            --gradient-brand: linear-gradient(135deg, #364011 0%, #97A626 50%, #F2E529 100%);
         }
-        
-        /* Estilos específicos para o plano de ação */
-        .plano-header {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-            color: var(--background-light);
-            padding: 3rem 0;
-            text-align: center;
+
+        * {
+            box-sizing: border-box;
         }
-        
-        .client-info {
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--background-light);
-            border-left: 5px solid var(--primary-dark);
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 8px;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        p, li, span {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        section {
+            padding: 3.5rem 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .plano-header {
+            background: var(--gradient-brand);
+            color: var(--background-light);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plano-header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 55%);
+            pointer-events: none;
+        }
+
+        .plano-header h1 {
+            font-size: clamp(2.3rem, 4vw, 3.2rem);
+            color: var(--background-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .plano-header p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .client-info {
+            background: var(--background-card);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 12px 30px var(--shadow-light);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .client-info h2 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+        }
+
+        .client-info strong {
             color: var(--text-dark);
         }
-        
+
+        .client-info span {
+            color: var(--primary-darker);
+            font-weight: 600;
+        }
+
         .diagnostico-section {
             background: var(--background-soft);
-            padding: 3rem 0;
-            color: var(--text-dark);
         }
-        
+
+        .diagnostico-section h2,
+        .diagnostico-section h3 {
+            text-align: center;
+            color: var(--primary-darker);
+        }
+
+        .metricas-iniciais {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .metrica-card {
+            background: var(--background-card);
+            border-radius: 14px;
+            padding: 1.75rem;
+            border: 1px solid var(--border-light);
+            text-align: center;
+            box-shadow: 0 10px 25px var(--shadow-light);
+        }
+
+        .metrica-numero {
+            display: block;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--primary-darker);
+            margin-bottom: 0.5rem;
+        }
+
         .pontos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 1.75rem;
+            margin-top: 1.75rem;
         }
-        
+
         .ponto-card {
             background: var(--background-card);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px var(--shadow-medium);
-            border-left: 4px solid var(--primary-dark);
-            color: var(--text-dark);
-        }
-          .ponto-card.critico {
-            border-left-color: var(--accent-warm);
-            background: var(--background-card);
-            color: var(--text-dark);
-        }
-        
-        .ponto-card.importante {
-            border-left-color: var(--accent-color);
-            background: var(--background-card);
-            color: var(--text-dark);
-        }
-        
-        .ponto-card.oportunidade {
-            border-left-color: var(--primary-color);
-            background: var(--background-card);
-            color: var(--text-dark);
-        }
-        
-        .trilha-recomendada {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-            color: var(--background-light);
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .trilha-card {
-            background: var(--background-light);
-            color: var(--text-dark);
+            border-radius: 16px;
             padding: 2rem;
-            border-radius: 15px;
-            max-width: 800px;
-            margin: 2rem auto;
-            box-shadow: 0 8px 25px var(--shadow-medium);
             border: 1px solid var(--border-light);
+            border-left: 6px solid var(--primary-darker);
+            box-shadow: 0 16px 35px var(--shadow-light);
         }
-        
-        .metricas-iniciais {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+
+        .ponto-card h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-darker);
+            font-size: 1.2rem;
         }
-        
-        .metrica-card {
-            background: var(--background-card);
-            padding: 1.5rem;
-            border-radius: 10px;
+
+        .ponto-card ul {
+            padding-left: 1.1rem;
+            margin: 0 0 1rem;
+            color: var(--text-muted);
+        }
+
+        .ponto-card li + li {
+            margin-top: 0.5rem;
+        }
+
+        .ponto-card.critico { border-left-color: var(--accent-warm); }
+        .ponto-card.importante { border-left-color: var(--accent-color); }
+        .ponto-card.oportunidade { border-left-color: var(--primary-color); }
+
+        .trilha-recomendada {
+            background: var(--gradient-brand);
+            padding: 4rem 0;
+            color: var(--background-light);
             text-align: center;
-            box-shadow: 0 3px 10px var(--shadow-light);
-            border: 1px solid var(--border-light);
-            color: var(--text-dark);
-        }        
-        .metrica-numero {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-dark);
-            display: block;
         }
-        
+
+        .trilha-recomendada h2 {
+            color: var(--background-light);
+        }
+
+        .trilha-card {
+            background: var(--background-card);
+            color: var(--text-dark);
+            padding: 2.5rem;
+            border-radius: 18px;
+            max-width: 860px;
+            margin: 0 auto;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 20px 45px var(--shadow-medium);
+        }
+
+        .trilha-card h3 {
+            color: var(--primary-darker);
+        }
+
+        .trilha-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
         .cronograma-90dias {
             background: var(--background-soft);
-            padding: 3rem 0;
-            color: var(--text-dark);
         }
-        
+
         .etapa-mes {
             background: var(--background-card);
+            border-radius: 18px;
             padding: 2rem;
-            margin: 1rem 0;
-            border-radius: 10px;
-            border-left: 5px solid var(--primary-dark);
-            box-shadow: 0 3px 8px var(--shadow-light);
-            color: var(--text-dark);
             border: 1px solid var(--border-light);
+            box-shadow: 0 16px 35px var(--shadow-light);
+            margin-bottom: 1.5rem;
+            border-left: 6px solid var(--primary-color);
         }
-          .prioridade-alta {
-            color: var(--background-light);
-            font-weight: bold;
-            background: var(--accent-warm);
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 0.9rem;
+
+        .etapa-mes h3 {
+            color: var(--primary-darker);
+            margin-bottom: 1rem;
         }
-        
-        .prioridade-media {
-            color: var(--text-dark);
-            font-weight: bold;
-            background: var(--accent-color);
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 0.9rem;
+
+        .etapa-mes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        
+
+        .etapa-mes li {
+            color: var(--text-muted);
+            padding: 0.4rem 0;
+        }
+
+        .prioridade-alta,
+        .prioridade-media,
         .prioridade-baixa {
-            color: var(--background-light);
-            font-weight: bold;
-            background: var(--primary-color);
-            padding: 4px 8px;
-            border-radius: 6px;
+            display: inline-block;
             font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+            margin-bottom: 0.35rem;
         }
-          .resultados-esperados {
-            background: var(--primary-dark);
+
+        .prioridade-alta {
+            background: var(--accent-warm);
             color: var(--background-light);
-            padding: 3rem 0;
         }
-        
+
+        .prioridade-media {
+            background: var(--accent-color);
+            color: var(--primary-darker);
+        }
+
+        .prioridade-baixa {
+            background: var(--primary-color);
+            color: var(--background-card);
+        }
+
+        .resultados-esperados {
+            background: var(--background-contrast);
+            color: var(--background-light);
+        }
+
+        .resultados-esperados h2,
+        .resultados-esperados h3 {
+            color: var(--background-light);
+        }
+
+        .resultados-esperados ul {
+            padding-left: 1.2rem;
+            margin: 1rem 0 0;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .resultados-esperados li {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .resultados-esperados li + li {
+            margin-top: 0.35rem;
+        }
+
         .investimento-section {
             background: var(--background-soft);
-            padding: 2rem 0;
-            text-align: center;
-            border-top: 3px solid var(--primary-dark);
-            color: var(--text-dark);
+            border-top: 1px solid var(--border-light);
         }
-        
+
         .investimento-card {
             background: var(--background-card);
-            padding: 2rem;
-            border-radius: 15px;
+            border-radius: 18px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 14px 35px var(--shadow-light);
             max-width: 500px;
             margin: 0 auto;
-            box-shadow: 0 5px 15px var(--shadow-medium);
-            border: 1px solid var(--border-light);
-            color: var(--text-dark);
+            text-align: center;
         }
-        
+
+        .investimento-card h3 {
+            color: var(--primary-darker);
+        }
+
+        .investimento-card ul {
+            text-align: left;
+            color: var(--text-muted);
+        }
+
+        .investimento-card li + li {
+            margin-top: 0.4rem;
+        }
+
+        .investimento-card strong {
+            color: var(--text-primary);
+        }
+
         .data-apresentacao {
             text-align: right;
             color: var(--text-muted);
-            font-size: 0.9rem;
             margin-top: 2rem;
+            font-size: 0.92rem;
         }
-        
+
+        footer p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        footer .data-apresentacao {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        footer {
+            margin-top: 0;
+        }
+
+        @media (max-width: 900px) {
+            .client-info {
+                padding: 1.75rem;
+            }
+
+            .trilha-card {
+                padding: 2rem;
+            }
+        }
+
         @media (max-width: 768px) {
-            .pontos-grid {
+            section {
+                padding: 2.5rem 0;
+            }
+
+            .pontos-grid,
+            .metricas-iniciais {
                 grid-template-columns: 1fr;
             }
-            
-            .metricas-iniciais {
-                grid-template-columns: repeat(2, 1fr);
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .data-apresentacao {
+                text-align: left;
             }
         }
     </style>

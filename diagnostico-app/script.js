@@ -346,33 +346,13 @@ class DiagnosticProcessor {
 
 // Inicialização da aplicação
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 Inicializando diagnóstico...');
-    
-    let processor, saver;
-    
-    try {
-        processor = new DiagnosticProcessor();
-        console.log('✅ DiagnosticProcessor criado');
-        
-        saver = new DiagnosticSaver();
-        console.log('✅ DiagnosticSaver criado');
-    } catch (error) {
-        console.error('❌ Erro ao criar classes:', error);
-        return;
-    }
-    
+    const processor = new DiagnosticProcessor();
+    const saver = new DiagnosticSaver(); // Inicializar sistema de salvamento
     const form = document.getElementById('diagnostic-form');
     const formSection = document.getElementById('form-section');
     const resultSection = document.getElementById('result-section');
     
-    if (!form || !formSection || !resultSection) {
-        console.error('❌ Elementos HTML não encontrados');
-        return;
-    }
-    
-    console.log('✅ Elementos HTML encontrados');
-      form.addEventListener('submit', function(e) {
-        console.log('🎯 Form submit detectado');
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
         
         // Coletar respostas
@@ -381,72 +361,31 @@ document.addEventListener('DOMContentLoaded', function() {
         
         for (let [key, value] of formData.entries()) {
             respostas[key] = value;
-            console.log(`📝 ${key}: ${value}`);
         }
         
         // Validar respostas obrigatórias
         if (!respostas.q1 || !respostas.q2 || !respostas.q3 || !respostas.q4) {
-            console.log('❌ Validação falhou - perguntas em branco');
             alert('Por favor, responda todas as perguntas de múltipla escolha.');
             return;
         }
         
         if (!respostas.nome || !respostas.contato) {
-            console.log('❌ Validação falhou - dados pessoais em branco');
             alert('Por favor, preencha seu nome e contato.');
             return;
         }
-          console.log('✅ Validação passou');
         
-        try {
-            console.log('🔄 Gerando diagnóstico...');
-            const diagnostico = processor.gerarDiagnostico(respostas);
-            console.log('✅ Diagnóstico gerado:', diagnostico);
-            
-            // Exibir resultado PRIMEIRO
-            console.log('🎨 Exibindo resultado...');
-            exibirResultado(diagnostico, respostas);
-            console.log('✅ Resultado exibido');
-            
-            // Esconder formulário e mostrar resultado
-            console.log('🔄 Trocando seções...');
-            formSection.classList.add('hidden');
-            resultSection.classList.remove('hidden');
-            console.log('✅ Seções trocadas');
-            
-            // Scroll para o topo
-            window.scrollTo(0, 0);
-            console.log('✅ Scroll realizado');
-            
-            // ===============================
-            // SALVAR DIAGNÓSTICO EM MÚLTIPLOS SISTEMAS (em segundo plano)
-            // ===============================
-            
-            // Preparar dados para salvamento
-            const diagnosticData = {
-                ...respostas,
-                scores: diagnostico.scores || {},
-                trilhasRecomendadas: diagnostico.trilhasRecomendadas?.map(t => t.nome) || [],
-                problemas: diagnostico.problemas || [],
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent,
-                ip: 'Detectado automaticamente'
-            };
+        // Gerar diagnóstico
+        const diagnostico = processor.gerarDiagnostico(respostas);
         
-        // Salvar em todos os sistemas disponíveis (em segundo plano)
-        saver.saveAllSystems(diagnosticData).then(results => {
-            console.log('📊 Resultados do salvamento:', results);
-            
-            // Mostrar notificação para o usuário
-            setTimeout(() => {
-                showSaveNotification(results);
-            }, 1000); // Aguardar 1 segundo para mostrar a notificação
-        }).catch(error => {
-            console.error('❌ Erro ao salvar diagnóstico:', error);
-            setTimeout(() => {
-                showSaveNotification({ localStorage: true, email: false, googleSheets: false });
-            }, 1000);
-        });
+        // Exibir resultado
+        exibirResultado(diagnostico, respostas);
+        
+        // Esconder formulário e mostrar resultado
+        formSection.classList.add('hidden');
+        resultSection.classList.remove('hidden');
+        
+        // Scroll para o topo
+        window.scrollTo(0, 0);
     });
 });
 
@@ -566,197 +505,3 @@ Meus dados: ${nomeCliente} - ${empresa}`;
         window.open(whatsappUrl, '_blank');
     }
 }
-
-// Função para mostrar notificação de salvamento
-function showSaveNotification(results) {
-    // Remover notificação existente se houver
-    const existingNotification = document.querySelector('.save-notification');
-    if (existingNotification) {
-        existingNotification.remove();
-    }
-
-    // Criar notificação
-    const notification = document.createElement('div');
-    notification.className = 'save-notification';
-    
-    let message = '✅ Diagnóstico salvo com sucesso!';
-    let details = [];
-    
-    if (results.localStorage) details.push('💾 Backup local');
-    if (results.email) details.push('📧 Enviado por email');
-    if (results.googleSheets) details.push('📊 Salvo na planilha');
-    
-    if (details.length === 0) {
-        message = '⚠️ Diagnóstico salvo localmente apenas';
-        details = ['💾 Dados seguros no seu navegador'];
-    }
-    
-    notification.innerHTML = `
-        <div class="notification-content">
-            <div class="notification-message">${message}</div>
-            <div class="notification-details">${details.join(' • ')}</div>
-        </div>
-        <button class="notification-close" onclick="this.parentElement.remove()">×</button>
-    `;
-    
-    // Adicionar ao corpo da página
-    document.body.appendChild(notification);
-    
-    // Remover automaticamente após 5 segundos
-    setTimeout(() => {
-        if (notification.parentElement) {
-            notification.remove();
-        }
-    }, 5000);
-}
-
-// ===============================
-// FUNÇÕES ADMINISTRATIVAS
-// ===============================
-
-// Função para exportar diagnósticos do Local Storage
-function exportDiagnostics() {
-    try {
-        const diagnostics = JSON.parse(localStorage.getItem('agente_nomade_diagnosticos') || '[]');
-        
-        if (diagnostics.length === 0) {
-            alert('Nenhum diagnóstico encontrado no armazenamento local.');
-            return;
-        }
-
-        // Converter para CSV
-        const csvContent = convertToCSV(diagnostics);
-        
-        // Criar e baixar arquivo
-        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        const link = document.createElement('a');
-        const url = URL.createObjectURL(blob);
-        
-        link.setAttribute('href', url);
-        link.setAttribute('download', `diagnosticos_agente_nomade_${new Date().toISOString().split('T')[0]}.csv`);
-        link.style.visibility = 'hidden';
-        
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        console.log(`✅ Exportados ${diagnostics.length} diagnósticos`);
-    } catch (error) {
-        console.error('❌ Erro ao exportar diagnósticos:', error);
-        alert('Erro ao exportar diagnósticos. Verifique o console para mais detalhes.');
-    }
-}
-
-// Converter diagnósticos para formato CSV
-function convertToCSV(diagnostics) {
-    const headers = [
-        'Timestamp', 'Nome', 'Empresa', 'Setor', 'Contato',
-        'Q1_Financeiro', 'Q2_Tecnologia', 'Q3_Marketing', 'Q4_Digital',
-        'Q5_Objetivo', 'Q6_Desafio', 'Q7_Problema_Urgente',
-        'Trilhas_Recomendadas', 'Score_Financeira', 'Score_Tecnologia',
-        'Score_Marketing', 'Score_Digital', 'Score_Dados'
-    ];
-    
-    let csvContent = headers.join(',') + '\n';
-    
-    diagnostics.forEach(diag => {
-        const row = [
-            diag.timestamp || '',
-            `"${(diag.nome || '').replace(/"/g, '""')}"`,
-            `"${(diag.empresa || '').replace(/"/g, '""')}"`,
-            `"${(diag.setor || '').replace(/"/g, '""')}"`,
-            `"${(diag.contato || '').replace(/"/g, '""')}"`,
-            diag.q1 || '',
-            diag.q2 || '',
-            diag.q3 || '',
-            diag.q4 || '',
-            `"${(diag.q5 || '').replace(/"/g, '""')}"`,
-            `"${(diag.q6 || '').replace(/"/g, '""')}"`,
-            `"${(diag.q7 || '').replace(/"/g, '""')}"`,
-            `"${(diag.trilhasRecomendadas || []).join('; ')}"`,
-            diag.scores?.financeira || '',
-            diag.scores?.tecnologia || '',
-            diag.scores?.marketing || '',
-            diag.scores?.digital || '',
-            diag.scores?.dados || ''
-        ];
-        
-        csvContent += row.join(',') + '\n';
-    });
-    
-    return csvContent;
-}
-
-// Função para visualizar estatísticas dos diagnósticos
-function showDiagnosticStats() {
-    try {
-        const diagnostics = JSON.parse(localStorage.getItem('agente_nomade_diagnosticos') || '[]');
-        
-        if (diagnostics.length === 0) {
-            console.log('📊 Nenhum diagnóstico encontrado');
-            return;
-        }
-        
-        // Calcular estatísticas
-        const stats = {
-            total: diagnostics.length,
-            porSetor: {},
-            trilhasMaisRecomendadas: {},
-            scoresMedios: {
-                financeira: 0,
-                tecnologia: 0,
-                marketing: 0,
-                digital: 0,
-                dados: 0
-            }
-        };
-        
-        diagnostics.forEach(diag => {
-            // Contar por setor
-            const setor = diag.setor || 'Não informado';
-            stats.porSetor[setor] = (stats.porSetor[setor] || 0) + 1;
-            
-            // Contar trilhas recomendadas
-            if (diag.trilhasRecomendadas) {
-                diag.trilhasRecomendadas.forEach(trilha => {
-                    stats.trilhasMaisRecomendadas[trilha] = (stats.trilhasMaisRecomendadas[trilha] || 0) + 1;
-                });
-            }
-            
-            // Somar scores
-            if (diag.scores) {
-                Object.keys(stats.scoresMedios).forEach(key => {
-                    stats.scoresMedios[key] += diag.scores[key] || 0;
-                });
-            }
-        });
-        
-        // Calcular médias
-        Object.keys(stats.scoresMedios).forEach(key => {
-            stats.scoresMedios[key] = (stats.scoresMedios[key] / diagnostics.length).toFixed(2);
-        });
-        
-        console.log('📊 ESTATÍSTICAS DOS DIAGNÓSTICOS:');
-        console.log(`Total de diagnósticos: ${stats.total}`);
-        console.log('Por setor:', stats.porSetor);
-        console.log('Trilhas mais recomendadas:', stats.trilhasMaisRecomendadas);
-        console.log('Scores médios:', stats.scoresMedios);
-        
-        return stats;
-    } catch (error) {
-        console.error('❌ Erro ao calcular estatísticas:', error);
-    }
-}
-
-// Função administrativa - chamar no console do navegador
-console.log(`
-🔧 FUNÇÕES ADMINISTRATIVAS DISPONÍVEIS:
-
-• exportDiagnostics() - Exportar todos os diagnósticos em CSV
-• showDiagnosticStats() - Mostrar estatísticas dos diagnósticos
-• localStorage.getItem('agente_nomade_diagnosticos') - Ver dados brutos
-
-Exemplo de uso:
-> showDiagnosticStats()
-> exportDiagnostics()
-`);

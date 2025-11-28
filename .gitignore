@@ -1,0 +1,19 @@
+# Arquivos de clientes específicos - NUNCA fazer commit
+plano-*-*.html
+*-cliente-*.html
+
+# Arquivos temporários e de trabalho interno
+*.tmp
+~*
+
+# Arquivos sensíveis
+*.env
+config-local.*
+
+# Documentos Word temporários
+~$*.docx
+~$*.doc
+
+# Backup files
+*.bak
+*.backup
